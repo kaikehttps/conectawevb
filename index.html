@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b4a47">
+  <title>Conecta Resíduos · Ecoponto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Barra compacta (celular) -->
+    <header class="barra-movel">
+      <a class="marca-mini" href="#/atendimento" aria-label="Conecta Resíduos — início do atendimento">
+        <span class="logo-mini" data-icone="logo"></span>
+        <span>Conecta Resíduos</span>
+      </a>
+      <button class="botao-menu" type="button" data-acao="abrir-menu" aria-label="Abrir menu" aria-controls="lateral" aria-expanded="false">
+        <span data-icone="menu"></span>
+      </button>
+    </header>
+
+    <aside class="lateral" id="lateral" aria-label="Navegação principal">
+      <a class="marca" href="#/atendimento" aria-label="Conecta Resíduos — início do atendimento">
+        <span class="logo" data-icone="logo"></span>
+        <span class="marca-nome">Conecta<br>Resíduos</span>
+      </a>
+      <nav class="nav">
+        <a href="#/atendimento" data-secao="atendimento"><span data-icone="pessoas"></span>Atendimento</a>
+        <a href="#/estoque" data-secao="estoque"><span data-icone="caixa"></span>Estoque</a>
+        <a href="#/retiradas" data-secao="retiradas"><span data-icone="caminhao"></span>Retiradas</a>
+        <a href="#/historico" data-secao="historico"><span data-icone="relogio"></span>Histórico</a>
+        <a href="#/configuracoes" data-secao="configuracoes"><span data-icone="engrenagem"></span>Configurações</a>
+      </nav>
+      <p class="selo-demo">Dados de demonstração</p>
+    </aside>
+    <div class="veu" data-acao="fechar-menu" hidden></div>
+
+    <main class="principal">
+      <header class="topo">
+        <h1 id="titulo-secao">Atendimento</h1>
+        <div class="operador">
+          <button class="pilula" type="button" data-acao="menu-operador" aria-haspopup="true" aria-expanded="false">
+            <span class="ponto" aria-hidden="true"></span><span id="nome-ecoponto">Ecoponto Central</span>
+          </button>
+          <div class="menu-operador" id="menu-operador" hidden>
+            <p class="menu-operador-nome"><strong>Lia Souza</strong><span>Operadora · turno iniciado às 07:30</span></p>
+            <button type="button" class="menu-operador-item" data-acao="encerrar-turno">Encerrar turno</button>
+          </div>
+        </div>
+      </header>
+      <div id="aviso-conexao"></div>
+      <section id="conteudo" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <dialog id="comprovante" class="dialogo" aria-labelledby="comprovante-titulo"></dialog>
+  <div id="aviso-rapido" class="aviso-rapido" role="status" hidden></div>
+
+  <!-- Camadas: dados (repositório de demonstração) → serviços (regras) → app (telas) -->
+  <script src="js/dados.js"></script>
+  <script src="js/servicos.js"></script>
+  <script src="js/icones.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
